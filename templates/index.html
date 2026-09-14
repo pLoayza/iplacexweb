@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block titulo %}Menú principal{% endblock %}
+
+{% block contenido %}
+    <h1>Iplacex</h1>
+    <h2>Menú principal</h2>
+    <p class="bajada">Elige el ejercicio que quieres resolver.</p>
+
+    <div class="menu">
+        <a class="boton" href="{{ url_for('ejercicio1') }}">Ejercicio 1</a>
+        <a class="boton" href="{{ url_for('ejercicio2') }}">Ejercicio 2</a>
+    </div>
+
+    <ul class="detalle-menu">
+        <li><span>Ejercicio 1</span> Promedio de notas y estado de aprobación.</li>
+        <li><span>Ejercicio 2</span> Nombre más largo de tres nombres.</li>
+        <p>Pedro Loayza</p>
+        <p><a href="https://github.com/TU-USUARIO/TU-REPO" target="_blank">Ver repositorio en GitHub</a></p>
+    </ul>
+{% endblock %}

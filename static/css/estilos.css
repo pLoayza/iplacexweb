@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 30px;
+}
+
+.tarjeta {
+    background-color: #ffffff;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 25px;
+    border: 1px solid #cccccc;
+}
+
+h1 {
+    color: #333333;
+    font-size: 26px;
+    margin-top: 0;
+}
+
+.bajada {
+    color: #666666;
+}
+
+.detalle-menu {
+    color: #666666;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+}
+
+.boton {
+    display: inline-block;
+    background-color: #336699;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 15px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.boton:hover {
+    background-color: #274d73;
+}
+
+.resultado {
+    background-color: #eaf2f8;
+    border: 1px solid #b8d4e8;
+    padding: 15px;
+    margin-top: 25px;
+}
+
+.estado {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.estado.aprobado {
+    color: #2e7d32;
+}
+
+.estado.reprobado {
+    color: #c62828;
+}
+
+.aviso.error {
+    background-color: #fdecea;
+    border: 1px solid #f5c6c2;
+    color: #c62828;
+    padding: 12px;
+    margin-top: 20px;
+}
+
+.volver {
+    display: inline-block;
+    margin-top: 25px;
+    color: #336699;
+}
