@@ -1,19 +1,8 @@
-"""
-Aplicacion web con Flask - Semanas V y VI
-Autor: Pedro Loayza Forero
-
-Menu principal con dos ejercicios:
-  Ejercicio 1: promedio de 3 notas + asistencia -> aprobado / reprobado
-  Ejercicio 2: 3 nombres -> el mas largo y su cantidad de caracteres
-"""
 
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-# ---------------------------------------------------------------------------
-# Funciones de apoyo (logica en Python, separada de las rutas)
-# ---------------------------------------------------------------------------
 
 NOTA_MINIMA = 10
 NOTA_MAXIMA = 70
@@ -22,7 +11,7 @@ ASISTENCIA_MINIMA = 75
 
 
 def texto_a_numero(valor, etiqueta):
-    """Convierte un texto del formulario a numero. Lanza ValueError si no se puede."""
+    
     valor = (valor or "").strip().replace(",", ".")
     if valor == "":
         raise ValueError(f"Debes ingresar {etiqueta}.")
@@ -33,26 +22,26 @@ def texto_a_numero(valor, etiqueta):
 
 
 def validar_rango(numero, minimo, maximo, etiqueta):
-    """Verifica que un numero este dentro del rango permitido."""
+    
     if numero < minimo or numero > maximo:
         raise ValueError(f"{etiqueta} debe estar entre {minimo} y {maximo}.")
     return numero
 
 
 def calcular_promedio(notas):
-    """Devuelve el promedio de una lista de notas, redondeado a 1 decimal."""
+    
     return round(sum(notas) / len(notas), 1)
 
 
 def obtener_estado(promedio, asistencia):
-    """Aprueba solo si el promedio es >= 40 Y la asistencia es >= 75%."""
+    
     if promedio >= NOTA_APROBACION and asistencia >= ASISTENCIA_MINIMA:
         return "APROBADO"
     return "REPROBADO"
 
 
 def limpiar_nombre(valor, etiqueta):
-    """Valida que el nombre no venga vacio y lo devuelve sin espacios sobrantes."""
+    
     nombre = (valor or "").strip()
     if nombre == "":
         raise ValueError(f"Debes ingresar {etiqueta}.")
@@ -60,19 +49,16 @@ def limpiar_nombre(valor, etiqueta):
 
 
 def contar_caracteres(nombre):
-    """Cuenta las letras del nombre, sin considerar los espacios."""
+    
     return len(nombre.replace(" ", ""))
 
 
 def nombre_mas_largo(nombres):
-    """Devuelve una tupla (nombre, cantidad de caracteres) del nombre mas largo."""
+    
     ganador = max(nombres, key=contar_caracteres)
     return ganador, contar_caracteres(ganador)
 
 
-# ---------------------------------------------------------------------------
-# Rutas
-# ---------------------------------------------------------------------------
 
 @app.route("/")
 def inicio():
@@ -115,7 +101,7 @@ def ejercicio1():
 
 @app.route("/ejercicio2", methods=["GET", "POST"])
 def ejercicio2():
-    """Formulario de los tres nombres."""
+    
     resultado = None
     error = None
     datos = {"nombre1": "", "nombre2": "", "nombre3": ""}
